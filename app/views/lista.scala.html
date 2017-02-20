@@ -1,0 +1,22 @@
+@(header: String, contatos: List[Contato])
+@main("Lista de Contatos"){
+
+<h1>@header</h1>
+<a href="@routes.ContatoController.novo">
+<button type="button" class="btn btn-success">Adicionar</button>
+</a>
+
+@for(contato <- contatos){
+
+<table class="table table-hover">
+<tbody>
+    <tr>
+        <td>
+            <strong>@contato.nome</strong> <br />
+            @contato.telefone
+        </td>
+    </tr>
+    }
+</tbody>
+</table>
+}
